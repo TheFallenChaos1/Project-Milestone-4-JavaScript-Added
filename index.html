@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javier Percival | Web-Slinger</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap nav-bar">
+      <a class="logo" href="index.html">Web-<span>Slinger</span></a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-controls="siteNav" aria-expanded="false" aria-label="Open menu">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+      </button>
+      <nav class="site-nav" id="siteNav">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Missions</a></li>
+          <li><a href="index.html#contact">Radio In</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap">
+      <div>
+        <p class="eyebrow">Javier Percival · Spider-Man fan · Web developer</p>
+        <h1>Friendly neighborhood front-end. Big city problems. Clean code.</h1>
+        <p class="lede">This Milestone 3 HQ has a hamburger menu, a contact form that validates in the page, and a live advice line from a public API.</p>
+        <div class="actions">
+          <a class="btn" href="projects.html">See missions</a>
+          <a class="btn secondary" href="#contact">Radio in</a>
+        </div>
+      </div>
+      <div class="badge-card">
+        <div class="spider" aria-hidden="true">🕷️</div>
+        <p>Red and blue. Keyboard ready. No inline onclick.</p>
+      </div>
+    </section>
+
+    <section class="section wrap" aria-labelledby="apiHeading">
+      <p class="eyebrow">Bonus · fetch()</p>
+      <h2 id="apiHeading">Daily Bugle advice line</h2>
+      <div class="api-box">
+        <p>Pulls a live quote from the free Advice Slip API. If the call fails, the page shows an error instead of crashing.</p>
+        <button class="btn" id="fetchAdviceBtn" type="button">Swing for advice</button>
+        <div class="api-result" id="apiResult" role="status" aria-live="polite">Hit the button. The city will talk back.</div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="contact" aria-labelledby="contactHeading">
+      <p class="eyebrow">Required · form validation</p>
+      <h2 id="contactHeading">Radio in</h2>
+      <form class="form" id="contactForm" novalidate>
+        <div class="field">
+          <label for="fullName">Full name</label>
+          <input id="fullName" name="fullName" type="text" autocomplete="name" aria-describedby="fullNameError">
+          <p class="field-error" id="fullNameError" role="alert"></p>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" aria-describedby="emailError">
+          <p class="field-error" id="emailError" role="alert"></p>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" aria-describedby="messageError"></textarea>
+          <p class="field-error" id="messageError" role="alert"></p>
+        </div>
+        <button class="btn" type="submit">Send message</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Javier Percival · With great power comes great JavaScript</p>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>

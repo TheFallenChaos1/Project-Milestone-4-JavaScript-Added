@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Missions | Javier Percival</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap nav-bar">
+      <a class="logo" href="index.html">Web-<span>Slinger</span></a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-controls="siteNav" aria-expanded="false" aria-label="Open menu">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+      </button>
+      <nav class="site-nav" id="siteNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html" aria-current="page">Missions</a></li>
+          <li><a href="index.html#contact">Radio In</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">DOM interaction</p>
+          <h1>Mission board</h1>
+        </div>
+        <div class="filters" role="group" aria-label="Filter missions">
+          <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-btn" type="button" data-filter="html" aria-pressed="false">HTML/CSS</button>
+          <button class="filter-btn" type="button" data-filter="js" aria-pressed="false">JavaScript</button>
+          <button class="filter-btn" type="button" data-filter="school" aria-pressed="false">School</button>
+        </div>
+      </div>
+      <div class="grid cards">
+        <article class="project-card" data-category="html">
+          <span class="tag">HTML/CSS</span>
+          <h2>Web-Slinger HQ</h2>
+          <p>Three-page responsive site in red and blue, built with Flexbox and Grid.</p>
+        </article>
+        <article class="project-card" data-category="js">
+          <span class="tag">JavaScript</span>
+          <h2>Patrol interactivity</h2>
+          <p>Button updates, live style changes, and a list built with createElement.</p>
+        </article>
+        <article class="project-card" data-category="school">
+          <span class="tag">School</span>
+          <h2>Accessibility pass</h2>
+          <p>WAVE fixes for headings, labels, contrast, and keyboard flow.</p>
+        </article>
+        <article class="project-card" data-category="js">
+          <span class="tag">JavaScript</span>
+          <h2>Radio-in form</h2>
+          <p>Required-field checks with on-page errors that clear as you type.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Javier Percival · With great power comes great JavaScript</p>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>
