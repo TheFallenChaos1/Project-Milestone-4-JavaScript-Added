@@ -110,17 +110,17 @@
     });
   }
 
-  async function loadAdvice() {
-    if (!apiResult) return;
-    apiResult.textContent = "Calling the cat fact API…";
-    try {
-      const response = await fetch("https://catfact.ninja/fact", { cache: "no-store" });
-      if (!response.ok) throw new Error("The API returned " + response.status);
-      const data = await response.json();
-      apiResult.textContent = data.fact
-        ? data.fact
-        : "The API responded, but no fact was found.";
-    } catch (error) {
-      apiResult.textContent = "Could not load a fact right now. " + error.message;
-    }
+ async function loadAdvice() {
+  if (!apiResult) return;
+  apiResult.textContent = "Calling the dog fact API…";
+  try {
+    const response = await fetch("https://dogapi.dog/api/v1/facts?number=1", { cache: "no-store" });
+    if (!response.ok) throw new Error("The API returned " + response.status);
+    const data = await response.json();
+    apiResult.textContent = data.facts && data.facts[0]
+      ? data.facts[0]
+      : "The API responded, but no fact was found.";
+  } catch (error) {
+    apiResult.textContent = "Could not load a fact right now. " + error.message;
   }
+}
