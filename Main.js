@@ -112,20 +112,15 @@
 
   async function loadAdvice() {
     if (!apiResult) return;
-    apiResult.textContent = "Calling the Advice Slip API…";
+    apiResult.textContent = "Calling the cat fact API…";
     try {
-      const response = await fetch("https://api.adviceslip.com/advice", { cache: "no-store" });
+      const response = await fetch("https://catfact.ninja/fact", { cache: "no-store" });
       if (!response.ok) throw new Error("The API returned " + response.status);
       const data = await response.json();
-      apiResult.textContent = data.slip && data.slip.advice
-        ? '"' + data.slip.advice + '"'
-        : "The API responded, but no advice was found.";
+      apiResult.textContent = data.fact
+        ? data.fact
+        : "The API responded, but no fact was found.";
     } catch (error) {
-      apiResult.textContent = "Could not load advice right now. " + error.message;
+      apiResult.textContent = "Could not load a fact right now. " + error.message;
     }
   }
-
-  if (fetchBtn && apiResult) {
-    fetchBtn.addEventListener("click", loadAdvice);
-  }
-})();
